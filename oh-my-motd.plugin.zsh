@@ -15,7 +15,7 @@ getRandomQuote() {
     if [ -n "$QUOTE" ] && [ -n "$AUTHOR" ]; then
         echo "$NL\"$QUOTE\" $NL- $AUTHOR"
     else
-        echo "$NL$DEFAULT"
+        echo "$NL$DEFAULT" | ./center.sh | lolcat
     fi
 }
 
