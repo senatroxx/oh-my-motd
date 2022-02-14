@@ -15,14 +15,14 @@ getRandomQuote() {
     if [ -n "$QUOTE" ] && [ -n "$AUTHOR" ]; then
         echo "$NL\"$QUOTE\" $NL- $AUTHOR"
     else
-        echo "$NL$DEFAULT" | ./center.sh | lolcat
+        echo "$NL$DEFAULT" | lolcat
     fi
 }
 
 # Check if the computer has internet connection
 if ping -c 1 -w 1 google.com 2>&1 > /dev/null; then
-    echo $(getRandomQuote) | ./center.sh | lolcat
+    echo $(getRandomQuote) | lolcat
 else
     # If it doesn't, show this
-    echo "$NL$DEFAULT" | ./center.sh | lolcat
+    echo "$NL$DEFAULT" | lolcat
 fi
